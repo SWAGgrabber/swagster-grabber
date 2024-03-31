@@ -16,7 +16,7 @@ from rich.progress import (BarColumn, Progress, TextColumn, TimeElapsedColumn)
 
 # not my code -> https://github.com/addi00000/empyrean really hot
 
-banner = """SwagGrabber"""
+banner = """swaggrabber"""
 
 print(Fore.LIGHTMAGENTA_EX+banner)
 print(f'{Fore.LIGHTMAGENTA_EX}────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────{Fore.RESET}')
@@ -212,7 +212,7 @@ class Build:
         """
         Downloads pyinstaller package
         """
-        url = 'https://github.com/pyinstaller/pyinstaller/archive/refs/tags/v6.5.0.zip'
+        url = 'https://github.com/pyinstaller/pyinstaller/archive/refs/tags/v5.1.zip'
 
         with requests.get(url, stream=True) as r:
             with open(os.path.join(self.build_dir, 'pyinstaller.zip'), 'wb') as f:
@@ -224,7 +224,7 @@ class Build:
         """
         Downloads UPX package
         """
-        url = 'https://github.com/upx/upx/releases/download/v4.2.3/upx-4.2.3-win64.zip'
+        url = 'https://github.com/upx/upx/releases/download/v3.96/upx-3.96-win64.zip'
 
         with requests.get(url, stream=True) as r:
             with open(os.path.join(self.build_dir, 'upx.zip'), 'wb') as f:
